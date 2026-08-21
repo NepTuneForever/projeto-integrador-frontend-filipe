@@ -1,0 +1,366 @@
+body {
+    margin: 0;
+    background: #c9ced4;
+}
+
+body > header,
+body > main,
+body > footer {
+    opacity: 0;
+    animation: page-reveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) 4.4s forwards;
+}
+
+@keyframes page-reveal {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.intro-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #c9ced4;
+    transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                visibility 0.9s cubic-bezier(0.4, 0, 0.2, 1),
+                transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: scale(1.08);
+}
+
+.intro-overlay .honeycomb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.4s ease;
+}
+
+.intro-overlay.show-wordmark .honeycomb {
+    opacity: 0;
+}
+
+.intro-wordmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.85);
+    opacity: 0;
+}
+
+.intro-wordmark .loader {
+    transform: scale(2.2);
+}
+
+#form-login-button {
+  font-family: inherit;
+  font-size: 18px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+  padding: 0.4em 1em;
+  border: 3px solid #FF0072;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  color: #FF0072;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease all;
+  z-index: 1;
+}
+
+#form-login-button:before {
+  transition: 0.5s all ease;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 50%;
+  bottom: 0;
+  opacity: 0;
+  content: '';
+  background-color: #FF0072;
+  z-index: -1;
+}
+
+#form-login-button:hover, #form-login-button:focus {
+  color: white;
+}
+
+#form-login-button:hover:before, #form-login-button:focus:before {
+  transition: 0.5s all ease;
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+#form-login-button:active {
+  transform: scale(0.9);
+}
+
+.wave-group {
+  position: relative;
+}
+
+.wave-group .input {
+  font-size: 16px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #515151;
+  background: transparent;
+}
+
+.wave-group .input:focus {
+  outline: none;
+}
+
+.wave-group .label {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  display: flex;
+}
+
+.wave-group .label-char {
+  transition: 0.2s ease all;
+  transition-delay: calc(var(--index) * .05s);
+}
+
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:not(:placeholder-shown) ~ label .label-char {
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: #5264AE;
+}
+
+.wave-group .bar {
+  position: relative;
+  display: block;
+  width: 200px;
+}
+
+.wave-group .bar:before,.wave-group .bar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #5264AE;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+.wave-group .bar:before {
+  left: 50%;
+}
+
+.wave-group .bar:after {
+  right: 50%;
+}
+
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+  width: 50%;
+}
+
+@media (max-width: 480px) {
+    .intro-wordmark .loader {
+        transform: scale(1.4);
+    }
+}
+
+.intro-overlay.show-wordmark .intro-wordmark {
+    animation: wordmark-reveal 1.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes wordmark-reveal {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.85);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+/* Um pouco mais devagar que o loader original de main.html */
+.intro-wordmark .dash {
+    animation-duration: 2.6s, 2.6s;
+}
+
+.intro-wordmark .spin {
+    animation-duration: 2.6s, 9.2s, 2.6s;
+}
+
+@-webkit-keyframes honeycomb {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes honeycomb {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.honeycomb {
+  height: 24px;
+  position: relative;
+  width: 24px;
+}
+
+.honeycomb div {
+  -webkit-animation: honeycomb 2.1s infinite backwards;
+  animation: honeycomb 2.1s infinite backwards;
+  background: #7fb69e;
+  height: 12px;
+  margin-top: 6px;
+  position: absolute;
+  width: 24px;
+}
+
+.honeycomb div:after, .honeycomb div:before {
+  content: '';
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.honeycomb div:after {
+  top: -6px;
+  border-bottom: 6px solid #7fb69e;
+}
+
+.honeycomb div:before {
+  bottom: -6px;
+  border-top: 6px solid #7fb69e;
+}
+
+.honeycomb div:nth-child(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+  left: -28px;
+  top: 0;
+}
+
+.honeycomb div:nth-child(2) {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+  left: -14px;
+  top: 22px;
+}
+
+.honeycomb div:nth-child(3) {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+  left: 14px;
+  top: 22px;
+}
+
+.honeycomb div:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  left: 28px;
+  top: 0;
+}
+
+.honeycomb div:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  left: 14px;
+  top: -22px;
+}
+
+.honeycomb div:nth-child(6) {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  left: -14px;
+  top: -22px;
+}
+
+.honeycomb div:nth-child(7) {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+  left: 0;
+  top: 0;
+}
+
+/* Mesma paleta do loader "ELO", suavizada (mesclada com branco) */
+.honeycomb div:nth-child(1) { background: color-mix(in srgb, #973BED 45%, white); }
+.honeycomb div:nth-child(1):after { border-bottom-color: color-mix(in srgb, #973BED 45%, white); }
+.honeycomb div:nth-child(1):before { border-top-color: color-mix(in srgb, #973BED 45%, white); }
+
+.honeycomb div:nth-child(2) { background: color-mix(in srgb, #007CFF 45%, white); }
+.honeycomb div:nth-child(2):after { border-bottom-color: color-mix(in srgb, #007CFF 45%, white); }
+.honeycomb div:nth-child(2):before { border-top-color: color-mix(in srgb, #007CFF 45%, white); }
+
+.honeycomb div:nth-child(3) { background: color-mix(in srgb, #00E0ED 45%, white); }
+.honeycomb div:nth-child(3):after { border-bottom-color: color-mix(in srgb, #00E0ED 45%, white); }
+.honeycomb div:nth-child(3):before { border-top-color: color-mix(in srgb, #00E0ED 45%, white); }
+
+.honeycomb div:nth-child(4) { background: color-mix(in srgb, #00DA72 45%, white); }
+.honeycomb div:nth-child(4):after { border-bottom-color: color-mix(in srgb, #00DA72 45%, white); }
+.honeycomb div:nth-child(4):before { border-top-color: color-mix(in srgb, #00DA72 45%, white); }
+
+.honeycomb div:nth-child(5) { background: color-mix(in srgb, #FFC800 45%, white); }
+.honeycomb div:nth-child(5):after { border-bottom-color: color-mix(in srgb, #FFC800 45%, white); }
+.honeycomb div:nth-child(5):before { border-top-color: color-mix(in srgb, #FFC800 45%, white); }
+
+.honeycomb div:nth-child(6) { background: color-mix(in srgb, #FF00FF 45%, white); }
+.honeycomb div:nth-child(6):after { border-bottom-color: color-mix(in srgb, #FF00FF 45%, white); }
+.honeycomb div:nth-child(6):before { border-top-color: color-mix(in srgb, #FF00FF 45%, white); }
+
+.honeycomb div:nth-child(7) { background: color-mix(in srgb, #973BED 45%, white); }
+.honeycomb div:nth-child(7):after { border-bottom-color: color-mix(in srgb, #973BED 45%, white); }
+.honeycomb div:nth-child(7):before { border-top-color: color-mix(in srgb, #973BED 45%, white); }

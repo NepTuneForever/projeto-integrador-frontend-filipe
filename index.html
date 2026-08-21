@@ -3,70 +3,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRM Farmácia - Gestão de Atendimento</title>
+    <title>Elo - Gestão de Atendimento para Farmácias</title>
     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/main.css">
 </head>
 <body>
+
+        <div class="intro-overlay" id="intro-overlay">
+            <div class="honeycomb">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="intro-wordmark" id="intro-wordmark">
+                <div class="loader">
+                    <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
+                        <defs>
+                            <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
+                                <stop stop-color="#973BED"></stop>
+                                <stop stop-color="#007CFF" offset="1"></stop>
+                            </linearGradient>
+                            <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
+                                <stop stop-color="#FFC800"></stop>
+                                <stop stop-color="#F0F" offset="1"></stop>
+                                <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
+                            </linearGradient>
+                            <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
+                                <stop stop-color="#00E0ED"></stop>
+                                <stop stop-color="#00DA72" offset="1"></stop>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#b)" d="M 56,4 H 12 V 60 H 56 M 12,32 H 46" class="dash" pathLength="360"></path>
+                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="8" stroke="url(#d)" d="M 12,4 V 60 H 56" class="dash" pathLength="360"></path>
+                    </svg>
+                    <div class="w-2"></div>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" style="--rotation-duration:0ms; --rotation-direction:normal;" viewBox="0 0 64 64" height="64" width="64" class="inline-block">
+                        <path stroke-linejoin="round" stroke-linecap="round" stroke-width="10" stroke="url(#c)" d="M 32 32
+                            m 0 -27
+                            a 27 27 0 1 1 0 54
+                            a 27 27 0 1 1 0 -54" class="spin" pathLength="360"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
     <header>
-        <h1>CRM Farmácia</h1>
+        <h1>Elo</h1>
         <p>Gestão de atendimento ao cliente</p>
     </header>
 
     <main>
-        <section id="sobre">
-            <h2>Sobre o projeto</h2>
-            <p>
-                Este CRM centraliza o cadastro de clientes, o histórico de atendimentos
-                e o acompanhamento de compras recorrentes, facilitando o relacionamento
-                entre a farmácia e seus clientes.
-            </p>
-        </section>
-
         <section id="cadastro">
-            <h2>Cadastro de Cliente</h2>
-            <form action="#" method="post">
-                <fieldset>
-                    <legend>Dados do cliente</legend>
-
-                    <div>
-                        <label for="nome">Nome completo</label>
-                        <input type="text" id="nome" name="nome" required>
+            <h2>Login</h2>
+            <form action="" method="POST">
+                <div id="form-email">
+                    <div class="wave-group">
+                        <input required type="email" class="input" id="email" name="email" placeholder=" ">
+                        <span class="bar"></span>
+                        <label class="label" for="email">
+                            <span class="label-char" style="--index: 0">E</span>
+                            <span class="label-char" style="--index: 1">m</span>
+                            <span class="label-char" style="--index: 2">a</span>
+                            <span class="label-char" style="--index: 3">i</span>
+                            <span class="label-char" style="--index: 4">l</span>
+                        </label>
                     </div>
+                </div>
 
-                    <div>
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" name="email" required>
+                <div id="form-password">
+                    <div class="wave-group">
+                        <input required type="password" class="input" id="password" name="password" placeholder=" ">
+                        <span class="bar"></span>
+                        <label class="label" for="password">
+                            <span class="label-char" style="--index: 0">S</span>
+                            <span class="label-char" style="--index: 1">e</span>
+                            <span class="label-char" style="--index: 2">n</span>
+                            <span class="label-char" style="--index: 3">h</span>
+                            <span class="label-char" style="--index: 4">a</span>
+                        </label>
                     </div>
+                </div>
 
-                    <div>
-                        <label for="telefone">Telefone</label>
-                        <input
-                            type="tel"
-                            id="telefone"
-                            name="telefone"
-                            pattern="\(\d{2}\)\s?\d{4,5}-?\d{4}"
-                            placeholder="(11) 91234-5678"
-                        >
-                    </div>
+                <div class="form-login-button">
+                    <button type="submit" id="form-login-button">Login</button>
+                </div>
 
-                    <div>
-                        <label for="nascimento">Data de nascimento</label>
-                        <input type="date" id="nascimento" name="nascimento">
-                    </div>
-
-                    <div>
-                        <label for="motivo">Motivo do atendimento</label>
-                        <textarea id="motivo" name="motivo" rows="4"></textarea>
-                    </div>
-
-                    <button type="submit">Cadastrar cliente</button>
-                </fieldset>
+                <div id="form-footer">
+                    <p>Não consegue acessar a conta? <span><a href="main.html">Mude sua Senha.</a></span></p>
+                </div>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>Projeto Integrador &mdash; CRM Farmácia</p>
+        <p>Projeto Integrador &mdash; Elo</p>
     </footer>
 
     <script src="script/script.js"></script>
