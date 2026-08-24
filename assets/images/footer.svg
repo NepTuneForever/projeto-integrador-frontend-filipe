@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 220" preserveAspectRatio="none">
+    <defs>
+        <linearGradient id="footer-wave-gradient" x1="0" y1="0" x2="1600" y2="220" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#FF8FC7"/>
+            <stop offset="1" stop-color="#FF0072"/>
+        </linearGradient>
+    </defs>
+    <path
+        fill="url(#footer-wave-gradient)"
+        d="M0,90
+           C 200,20 400,20 600,70
+           C 800,120 900,140 1000,110
+           C 1150,65 1300,15 1600,60
+           L1600,220 L0,220 Z"
+    />
+</svg>
