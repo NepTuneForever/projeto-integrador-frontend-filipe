@@ -1,7 +1,16 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     background: #c9ced4;
     min-height: 100vh;
+    overflow-x: hidden;
     display: flex;
     flex-direction: column;
 }
@@ -23,8 +32,7 @@ body > footer {
 body > footer img {
     display: block;
     width: 100%;
-    height: 130px;
-    object-fit: cover;
+    height: clamp(60px, 8vw, 110px);
 }
 
 
@@ -122,7 +130,25 @@ body > main {
 }
 
 .intro-wordmark .loader {
-    transform: scale(2.2);
+    transform: scale(1.1);
+}
+
+@media (min-width: 400px) {
+    .intro-wordmark .loader {
+        transform: scale(1.5);
+    }
+}
+
+@media (min-width: 600px) {
+    .intro-wordmark .loader {
+        transform: scale(1.9);
+    }
+}
+
+@media (min-width: 900px) {
+    .intro-wordmark .loader {
+        transform: scale(2.2);
+    }
 }
 
 #form-login-button {
@@ -275,12 +301,6 @@ body > main {
 .wave-group .input:focus ~ .bar:before,
 .wave-group .input:focus ~ .bar:after {
   width: 50%;
-}
-
-@media (max-width: 480px) {
-    .intro-wordmark .loader {
-        transform: scale(1.4);
-    }
 }
 
 .intro-overlay.show-wordmark .intro-wordmark {

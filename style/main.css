@@ -1,11 +1,33 @@
 .menu {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 15em;
+  gap: 1em 3em;
   list-style: none;
   margin: 0;
   padding: 15px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+}
+
+.absolute {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.inline-block {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  margin: 0.25em 0;
+}
+
+.w-2 {
+  width: 0.5em;
 }
