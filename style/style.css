@@ -33,6 +33,9 @@ body > main,
 body > footer {
     opacity: 0;
     animation: page-reveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) 4.4s forwards;
+}
+
+body > footer {
     position: relative;
     width: 100%;
     margin: 0;
