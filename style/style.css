@@ -1,3 +1,14 @@
+:root {
+    --bg: #F1F4EF;
+    --surface: #FFFFFF;
+    --ink: #21302B;
+    --muted: #6B7C76;
+    --line: #DCE3DD;
+    --primary: #2F6F5E;
+    --primary-dark: #1F4E42;
+    --accent: #B9873A;
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -8,7 +19,9 @@ html {
 
 body {
     margin: 0;
-    background: #c9ced4;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
     min-height: 100vh;
     overflow-x: hidden;
     display: flex;
@@ -50,10 +63,10 @@ body > main {
   justify-content: center;
   width: fit-content;
   padding: 40px 50px;
-  border-radius: 28px;
-  background: #f5a8e5;
-  box-shadow:  41px 41px 82px #d894ca,
-              -41px -41px 82px #ffbcff;
+  border-radius: 12px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 24px 48px -24px rgba(33, 48, 43, 0.18);
 }
 
 #cadastro h2 {
@@ -96,7 +109,7 @@ body > main {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #c9ced4;
+    background: var(--bg);
     transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1),
                 visibility 0.9s cubic-bezier(0.4, 0, 0.2, 1),
                 transform 0.9s cubic-bezier(0.4, 0, 0.2, 1);
@@ -161,12 +174,12 @@ body > main {
   font-weight: bold;
   padding: 0.4em 1em;
   margin: 1em 0;
-  border: 3px solid #FF0072;
+  border: 2px solid var(--primary);
   border-radius: 5px;
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
   background: transparent;
-  color: #FF0072;
+  color: var(--primary);
   text-decoration: none;
   cursor: pointer;
   transition: 0.3s ease all;
@@ -182,12 +195,12 @@ body > main {
   bottom: 0;
   opacity: 0;
   content: '';
-  background-color: #FF0072;
+  background-color: var(--primary);
   z-index: -1;
 }
 
-#form-login-button:hover, #form-login-button:focus {
-  color: white;
+#form-login-button:hover, #form-login-button:focus-visible {
+  color: var(--surface);
 }
 
 #form-login-button:hover:before, #form-login-button:focus:before {
@@ -206,7 +219,7 @@ body > main {
 }
 
 #header {
-  background: linear-gradient(to right, rgba(255, 0, 114, 0.7), rgba(255, 0, 255, 0.7));
+  background: linear-gradient(to right, var(--primary), var(--primary-dark));
 }
 
 #header h1 {
@@ -214,6 +227,7 @@ body > main {
   display: flex;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  color: var(--surface);
 }
 
 #header p {
@@ -221,13 +235,14 @@ body > main {
   display: flex;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
+  color: var(--surface);
 }
 
 #footer-text {
   font-size: 23px;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: #262626;
+  color: var(--ink);
   margin: 0;
   position: absolute;
   bottom: 20px;
@@ -241,8 +256,9 @@ body > main {
   display: block;
   width: 200px;
   border: none;
-  border-bottom: 1px solid #515151;
+  border-bottom: 1px solid var(--muted);
   background: transparent;
+  color: var(--ink);
 }
 
 .wave-group .input:focus {
@@ -250,7 +266,7 @@ body > main {
 }
 
 .wave-group .label {
-  color: #999;
+  color: var(--muted);
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -269,7 +285,7 @@ body > main {
 .wave-group .input:not(:placeholder-shown) ~ label .label-char {
   transform: translateY(-20px);
   font-size: 14px;
-  color: #5264AE;
+  color: var(--primary-dark);
 }
 
 .wave-group .bar {
@@ -284,7 +300,7 @@ body > main {
   width: 0;
   bottom: 1px;
   position: absolute;
-  background: #5264AE;
+  background: var(--primary);
   transition: 0.2s ease all;
   -moz-transition: 0.2s ease all;
   -webkit-transition: 0.2s ease all;
@@ -371,7 +387,7 @@ body > main {
 .honeycomb div {
   -webkit-animation: honeycomb 2.1s infinite backwards;
   animation: honeycomb 2.1s infinite backwards;
-  background: #7fb69e;
+  background: var(--primary);
   height: 12px;
   margin-top: 6px;
   position: absolute;
@@ -389,12 +405,12 @@ body > main {
 
 .honeycomb div:after {
   top: -6px;
-  border-bottom: 6px solid #7fb69e;
+  border-bottom: 6px solid var(--primary);
 }
 
 .honeycomb div:before {
   bottom: -6px;
-  border-top: 6px solid #7fb69e;
+  border-top: 6px solid var(--primary);
 }
 
 .honeycomb div:nth-child(1) {
@@ -446,30 +462,43 @@ body > main {
   top: 0;
 }
 
-.honeycomb div:nth-child(1) { background: color-mix(in srgb, #973BED 45%, white); }
-.honeycomb div:nth-child(1):after { border-bottom-color: color-mix(in srgb, #973BED 45%, white); }
-.honeycomb div:nth-child(1):before { border-top-color: color-mix(in srgb, #973BED 45%, white); }
+.honeycomb div:nth-child(1) { background: color-mix(in srgb, #2F6F5E 45%, white); }
+.honeycomb div:nth-child(1):after { border-bottom-color: color-mix(in srgb, #2F6F5E 45%, white); }
+.honeycomb div:nth-child(1):before { border-top-color: color-mix(in srgb, #2F6F5E 45%, white); }
 
-.honeycomb div:nth-child(2) { background: color-mix(in srgb, #007CFF 45%, white); }
-.honeycomb div:nth-child(2):after { border-bottom-color: color-mix(in srgb, #007CFF 45%, white); }
-.honeycomb div:nth-child(2):before { border-top-color: color-mix(in srgb, #007CFF 45%, white); }
+.honeycomb div:nth-child(2) { background: color-mix(in srgb, #1F4E42 45%, white); }
+.honeycomb div:nth-child(2):after { border-bottom-color: color-mix(in srgb, #1F4E42 45%, white); }
+.honeycomb div:nth-child(2):before { border-top-color: color-mix(in srgb, #1F4E42 45%, white); }
 
-.honeycomb div:nth-child(3) { background: color-mix(in srgb, #00E0ED 45%, white); }
-.honeycomb div:nth-child(3):after { border-bottom-color: color-mix(in srgb, #00E0ED 45%, white); }
-.honeycomb div:nth-child(3):before { border-top-color: color-mix(in srgb, #00E0ED 45%, white); }
+.honeycomb div:nth-child(3) { background: color-mix(in srgb, #B9873A 45%, white); }
+.honeycomb div:nth-child(3):after { border-bottom-color: color-mix(in srgb, #B9873A 45%, white); }
+.honeycomb div:nth-child(3):before { border-top-color: color-mix(in srgb, #B9873A 45%, white); }
 
-.honeycomb div:nth-child(4) { background: color-mix(in srgb, #00DA72 45%, white); }
-.honeycomb div:nth-child(4):after { border-bottom-color: color-mix(in srgb, #00DA72 45%, white); }
-.honeycomb div:nth-child(4):before { border-top-color: color-mix(in srgb, #00DA72 45%, white); }
+.honeycomb div:nth-child(4) { background: color-mix(in srgb, #6B7C76 45%, white); }
+.honeycomb div:nth-child(4):after { border-bottom-color: color-mix(in srgb, #6B7C76 45%, white); }
+.honeycomb div:nth-child(4):before { border-top-color: color-mix(in srgb, #6B7C76 45%, white); }
 
-.honeycomb div:nth-child(5) { background: color-mix(in srgb, #FFC800 45%, white); }
-.honeycomb div:nth-child(5):after { border-bottom-color: color-mix(in srgb, #FFC800 45%, white); }
-.honeycomb div:nth-child(5):before { border-top-color: color-mix(in srgb, #FFC800 45%, white); }
+.honeycomb div:nth-child(5) { background: color-mix(in srgb, #7FA593 45%, white); }
+.honeycomb div:nth-child(5):after { border-bottom-color: color-mix(in srgb, #7FA593 45%, white); }
+.honeycomb div:nth-child(5):before { border-top-color: color-mix(in srgb, #7FA593 45%, white); }
 
-.honeycomb div:nth-child(6) { background: color-mix(in srgb, #FF00FF 45%, white); }
-.honeycomb div:nth-child(6):after { border-bottom-color: color-mix(in srgb, #FF00FF 45%, white); }
-.honeycomb div:nth-child(6):before { border-top-color: color-mix(in srgb, #FF00FF 45%, white); }
+.honeycomb div:nth-child(6) { background: color-mix(in srgb, #8C6428 45%, white); }
+.honeycomb div:nth-child(6):after { border-bottom-color: color-mix(in srgb, #8C6428 45%, white); }
+.honeycomb div:nth-child(6):before { border-top-color: color-mix(in srgb, #8C6428 45%, white); }
 
-.honeycomb div:nth-child(7) { background: color-mix(in srgb, #973BED 45%, white); }
-.honeycomb div:nth-child(7):after { border-bottom-color: color-mix(in srgb, #973BED 45%, white); }
-.honeycomb div:nth-child(7):before { border-top-color: color-mix(in srgb, #973BED 45%, white); }
+.honeycomb div:nth-child(7) { background: color-mix(in srgb, #2F6F5E 45%, white); }
+.honeycomb div:nth-child(7):after { border-bottom-color: color-mix(in srgb, #2F6F5E 45%, white); }
+.honeycomb div:nth-child(7):before { border-top-color: color-mix(in srgb, #2F6F5E 45%, white); }
+
+@media (prefers-reduced-motion: reduce) {
+    body > header, body > main, body > footer {
+        animation-duration: 0.01s;
+        animation-delay: 0s;
+    }
+    .intro-overlay, .intro-overlay .honeycomb, .intro-wordmark {
+        transition-duration: 0.01s;
+    }
+    .honeycomb div, .intro-wordmark .dash, .intro-wordmark .spin {
+        animation: none;
+    }
+}

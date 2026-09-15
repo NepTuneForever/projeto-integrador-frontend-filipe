@@ -2,52 +2,229 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo - Área do Administrador</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elo - Pagina Principal</title>
 </head>
 <body>
-  
-    <main class="page-content">
-        <ul class="menu">
-            <li><a class="dashboard">Dashboard</a></li>
-            <li><a class="produtos">Produtos</a></li>
-            <li><a class="clientes">Clientes</a></li>
-            <li><a class="relatorios">Relatórios</a></li>
-        </ul>
 
-        <h1 style="justify-content: center; align-items: center; display: flex;">Área do Administrador</h1>
-        
-        <section id="clientes" style="display: none;">
-            <form action="" method="get">
+    <header class="admin-header">
+        <h1>Elo</h1>
+        <p>Área do administrador</p>
+        <nav aria-label="Seções da página">
+            <ul class="menu">
+                <li><a href="#dashboard">Painel</a></li>
+                <li><a href="#clientes">Clientes</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#relatorios">Relatórios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="dashboard" aria-labelledby="dashboard-heading">
+            <h2 id="dashboard-heading">Painel</h2>
+            <p class="section-intro">Resumo do atendimento de hoje na farmácia.</p>
+
+            <div class="stats">
+                <div class="stat">
+                    <p class="stat-value">18</p>
+                    <p class="stat-label">Atendimentos hoje</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">247</p>
+                    <p class="stat-label">Clientes cadastrados</p>
+                </div>
+                <div class="stat">
+                    <p class="stat-value">6</p>
+                    <p class="stat-label">Compras recorrentes em aberto</p>
+                </div>
+            </div>
+
+            <h3>Próximos atendimentos</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Horário</th>
+                            <th scope="col">Cliente</th>
+                            <th scope="col">Motivo</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09:30</td>
+                            <td>Marta Ferreira</td>
+                            <td>Retirada de receita contínua</td>
+                            <td class="status-confirmado">Confirmado</td>
+                        </tr>
+                        <tr>
+                            <td>10:15</td>
+                            <td>João Bittencourt</td>
+                            <td>Orientação sobre uso de medicamento</td>
+                            <td class="status-aguardando">Aguardando</td>
+                        </tr>
+                        <tr>
+                            <td>11:00</td>
+                            <td>Cecília Prado</td>
+                            <td>Renovação de compra recorrente</td>
+                            <td class="status-confirmado">Confirmado</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="clientes" aria-labelledby="clientes-heading">
+            <h2 id="clientes-heading">Clientes</h2>
+            <p class="section-intro">Cadastre um novo cliente ou consulte quem já é atendido na farmácia.</p>
+
+            <form action="" method="get" class="form-cliente">
                 <fieldset>
                     <legend>Cadastrar cliente</legend>
 
-                    <p>
-                        <label for="nome-cliente">Nome do cliente</label><br>
-                        <input type="text" id="nome-cliente" name="nome-cliente" required>
-                    </p>
+                    <div class="field">
+                        <label for="nome-cliente">Nome completo</label>
+                        <input type="text" id="nome-cliente" name="nome-cliente" autocomplete="name" required>
+                    </div>
 
-                    <p>
-                        <label for="email-cliente">E-mail do cliente</label><br>
-                        <input type="email" id="email-cliente" name="email-cliente" required>
-                    </p>
+                    <div class="field">
+                        <label for="email-cliente">E-mail</label>
+                        <input type="email" id="email-cliente" name="email-cliente" autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="telefone-cliente">Telefone</label>
+                        <input type="tel" id="telefone-cliente" name="telefone-cliente" autocomplete="tel" placeholder="(00) 00000-0000" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="nascimento-cliente">Data de nascimento</label>
+                        <input type="date" id="nascimento-cliente" name="nascimento-cliente" required>
+                    </div>
 
                     <button type="submit">Cadastrar cliente</button>
                 </fieldset>
             </form>
+
+            <h3>Clientes recentes</h3>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Contato</th>
+                            <th scope="col">Última compra</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Marta Ferreira</td>
+                            <td>marta.ferreira@email.com</td>
+                            <td>28/08/2026</td>
+                        </tr>
+                        <tr>
+                            <td>João Bittencourt</td>
+                            <td>(41) 99811-2230</td>
+                            <td>25/08/2026</td>
+                        </tr>
+                        <tr>
+                            <td>Cecília Prado</td>
+                            <td>cecilia.prado@email.com</td>
+                            <td>19/08/2026</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </section>
 
-        <p>
-            <a href="https://www.gov.br/anvisa/pt-br" target="_blank" rel="noopener noreferrer">Consultar ANVISA</a>
-        </p>
+        <section id="produtos" aria-labelledby="produtos-heading">
+            <h2 id="produtos-heading">Produtos</h2>
+            <p class="section-intro">Categorias acompanhadas no atendimento e se exigem receita.</p>
 
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Exemplo</th>
+                            <th scope="col">Exige receita</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Uso contínuo</td>
+                            <td>Losartana 50mg</td>
+                            <td>Sim</td>
+                        </tr>
+                        <tr>
+                            <td>Analgésicos</td>
+                            <td>Dipirona 500mg</td>
+                            <td>Não</td>
+                        </tr>
+                        <tr>
+                            <td>Antibióticos</td>
+                            <td>Amoxicilina 500mg</td>
+                            <td>Sim</td>
+                        </tr>
+                        <tr>
+                            <td>Higiene e cuidados</td>
+                            <td>Soro fisiológico</td>
+                            <td>Não</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="section-note">Em caso de dúvida sobre um princípio ativo, <a href="https://www.gov.br/anvisa/pt-br" target="_blank" rel="noopener noreferrer">consulte a bula na ANVISA</a>.</p>
+        </section>
+
+        <section id="relatorios" aria-labelledby="relatorios-heading">
+            <h2 id="relatorios-heading">Relatórios</h2>
+            <p class="section-intro">Panorama mensal de atendimentos e compras recorrentes.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Mês</th>
+                            <th scope="col">Atendimentos</th>
+                            <th scope="col">Clientes novos</th>
+                            <th scope="col">Compras recorrentes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Junho</td>
+                            <td>210</td>
+                            <td>14</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>Julho</td>
+                            <td>238</td>
+                            <td>19</td>
+                            <td>63</td>
+                        </tr>
+                        <tr>
+                            <td>Agosto</td>
+                            <td>259</td>
+                            <td>22</td>
+                            <td>71</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
     </main>
 
-   <!-- <script src="script/script.js"></script> -->
-    <script src="script/main.js"></script>
+    <footer class="admin-footer">
+        <p>Elo &mdash; Projeto Integrador</p>
+    </footer>
+
 </body>
 </html>
