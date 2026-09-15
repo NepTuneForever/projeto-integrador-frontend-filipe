@@ -11,10 +11,11 @@ window.addEventListener("load", () => {
     }, 4400);
 });
 
-const botao_login = document.getElementById("form-login-button")
+const login_form = document.getElementById("login-form")
 
-if (botao_login) {
-    botao_login.addEventListener("click", function() {
+if (login_form) {
+    login_form.addEventListener("submit", function(event) {
+        event.preventDefault()
         document.location.href = "front.html"
     })
 }
