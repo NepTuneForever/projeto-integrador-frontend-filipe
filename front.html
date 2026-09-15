@@ -13,39 +13,33 @@
   
     <main class="page-content">
         <ul class="menu">
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Produtos</a></li>
-            <li><a href="">Clientes</a></li>
-            <li><a href="">Relatórios</a></li>
+            <li><a class="dashboard">Dashboard</a></li>
+            <li><a class="produtos">Produtos</a></li>
+            <li><a class="clientes">Clientes</a></li>
+            <li><a class="relatorios">Relatórios</a></li>
         </ul>
 
         <h1 style="justify-content: center; align-items: center; display: flex;">Área do Administrador</h1>
-        <!-- 
-            mano, se vc tiver lendo esse comentario,
-            saiba que esse video ai em baixo nn faz 
-            parte do projeto, ele so ta ai pq jeofton
-            pediu kkkkkkk mas essa area é a area do adm,
-            a tela dps da parte de login
-        -->
-        <video style="height: 30em; width: 50em; padding: 100px;" src="assets/videos/Recording from 2026-08-27 10-03-38.320018.webm" controls></video>
+        
+        <section id="clientes" style="display: none;">
+            <form action="" method="get">
+                <fieldset>
+                    <legend>Cadastrar cliente</legend>
 
-        <form action="" method="get">
-            <fieldset>
-                <legend>Cadastrar cliente</legend>
+                    <p>
+                        <label for="nome-cliente">Nome do cliente</label><br>
+                        <input type="text" id="nome-cliente" name="nome-cliente" required>
+                    </p>
 
-                <p>
-                    <label for="nome-cliente">Nome do cliente</label><br>
-                    <input type="text" id="nome-cliente" name="nome-cliente" required>
-                </p>
+                    <p>
+                        <label for="email-cliente">E-mail do cliente</label><br>
+                        <input type="email" id="email-cliente" name="email-cliente" required>
+                    </p>
 
-                <p>
-                    <label for="email-cliente">E-mail do cliente</label><br>
-                    <input type="email" id="email-cliente" name="email-cliente" required>
-                </p>
-
-                <button type="submit">Cadastrar cliente</button>
-            </fieldset>
-        </form>
+                    <button type="submit">Cadastrar cliente</button>
+                </fieldset>
+            </form>
+        </section>
 
         <p>
             <a href="https://www.gov.br/anvisa/pt-br" target="_blank" rel="noopener noreferrer">Consultar ANVISA</a>
@@ -53,6 +47,7 @@
 
     </main>
 
-    <script src="script/script.js"></script>
+   <!-- <script src="script/script.js"></script> -->
+    <script src="script/main.js"></script>
 </body>
 </html>
