@@ -58,37 +58,135 @@ body > main {
 
 #cadastro {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  padding: 40px 50px;
-  border-radius: 12px;
+  width: 100%;
+  padding: 2rem 1.25rem;
+}
+
+.login-card {
+  display: flex;
+  width: 100%;
+  max-width: 760px;
+  border-radius: 16px;
+  overflow: hidden;
   background: var(--surface);
   border: 1px solid var(--line);
-  box-shadow: 0 24px 48px -24px rgba(33, 48, 43, 0.18);
+  box-shadow: 0 24px 48px -24px rgba(33, 48, 43, 0.22);
 }
 
-#cadastro h2 {
-  width: 200px;
-  text-align: center;
-  margin: 0 0 1em;
-}
-
-#cadastro form {
+.login-brand {
+  flex: 1 1 42%;
+  padding: 2.5rem 2rem;
+  background: linear-gradient(160deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: var(--surface);
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-brand::before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(241, 244, 239, 0.08);
+  top: -90px;
+  right: -90px;
+}
+
+.login-brand::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(241, 244, 239, 0.07);
+  bottom: -70px;
+  left: -60px;
+}
+
+.login-brand-mark {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.9rem;
+  letter-spacing: 0.02em;
+  position: relative;
+}
+
+.login-brand-text {
+  max-width: 30ch;
+  color: rgba(241, 244, 239, 0.88);
+  line-height: 1.55;
+  position: relative;
+}
+
+.login-form-panel {
+  flex: 1 1 58%;
+  padding: 2.5rem 2rem;
+}
+
+.login-form-panel h2 {
+  margin: 0 0 1.5rem;
+}
+
+.login-form-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
 }
 
 .form-login-button {
-  width: 200px;
-  text-align: center;
+  margin-top: 0.25rem;
 }
 
-#form-footer {
-  width: 200px;
-  text-align: center;
+.form-login-button button {
+  width: 100%;
+}
+
+#form-footer p {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.select-group label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.select-group select {
+  font: inherit;
+  padding: 0.5rem 0.6rem;
+  border: none;
+  border-bottom: 1px solid var(--muted);
+  background: transparent;
+  color: var(--ink);
+}
+
+.select-group select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+@media (max-width: 620px) {
+  .login-card {
+    flex-direction: column;
+    max-width: 420px;
+  }
+
+  .login-brand {
+    padding: 2rem 1.75rem;
+  }
 }
 
 @keyframes page-reveal {
@@ -254,7 +352,7 @@ body > main {
   font-size: 16px;
   padding: 10px 10px 10px 5px;
   display: block;
-  width: 200px;
+  width: 100%;
   border: none;
   border-bottom: 1px solid var(--muted);
   background: transparent;
@@ -291,7 +389,7 @@ body > main {
 .wave-group .bar {
   position: relative;
   display: block;
-  width: 200px;
+  width: 100%;
 }
 
 .wave-group .bar:before,.wave-group .bar:after {

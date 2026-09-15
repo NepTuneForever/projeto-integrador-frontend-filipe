@@ -147,6 +147,19 @@ main section h3 {
   margin-top: 0.25rem;
 }
 
+.video-wrap {
+  margin-top: 1rem;
+}
+
+.video-wrap video {
+  width: 100%;
+  max-width: 640px;
+  height: auto;
+  border-radius: 4px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
 /* tabelas de dados */
 .table-wrap {
   overflow-x: auto;

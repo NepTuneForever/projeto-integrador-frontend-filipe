@@ -65,44 +65,84 @@
 
     <main>
         <section id="cadastro">
-            <h2>Login</h2>
-            <form action="" method="POST">
-                <div id="form-email">
-                    <div class="wave-group">
-                        <input required type="email" class="input" id="email" name="email" placeholder=" ">
-                        <span class="bar"></span>
-                        <label class="label" for="email">
-                            <span class="label-char" style="--index: 0">E</span>
-                            <span class="label-char" style="--index: 1">m</span>
-                            <span class="label-char" style="--index: 2">a</span>
-                            <span class="label-char" style="--index: 3">i</span>
-                            <span class="label-char" style="--index: 4">l</span>
-                        </label>
-                    </div>
+            <div class="login-card">
+                <div class="login-brand">
+                    <p class="login-brand-mark">ELO</p>
+                    <p class="login-brand-text">Um só lugar para acompanhar cada cliente da farmácia, do primeiro atendimento à próxima compra recorrente.</p>
                 </div>
 
-                <div id="form-password">
-                    <div class="wave-group">
-                        <input required type="password" class="input" id="password" name="password" placeholder=" ">
-                        <span class="bar"></span>
-                        <label class="label" for="password">
-                            <span class="label-char" style="--index: 0">S</span>
-                            <span class="label-char" style="--index: 1">e</span>
-                            <span class="label-char" style="--index: 2">n</span>
-                            <span class="label-char" style="--index: 3">h</span>
-                            <span class="label-char" style="--index: 4">a</span>
-                        </label>
-                    </div>
-                </div>
+                <div class="login-form-panel">
+                    <h2>Entrar</h2>
+                    <form action="" method="POST" id="login-form">
+                        <div class="wave-group">
+                            <input required type="email" class="input" id="email" name="email" placeholder=" ">
+                            <span class="bar"></span>
+                            <label class="label" for="email">
+                                <span class="label-char" style="--index: 0">E</span>
+                                <span class="label-char" style="--index: 1">m</span>
+                                <span class="label-char" style="--index: 2">a</span>
+                                <span class="label-char" style="--index: 3">i</span>
+                                <span class="label-char" style="--index: 4">l</span>
+                            </label>
+                        </div>
 
-                <div class="form-login-button">
-                    <button type="submit" id="form-login-button">Login</button>
-                </div>
+                        <div class="wave-group">
+                            <input required type="password" class="input" id="password" name="password" placeholder=" ">
+                            <span class="bar"></span>
+                            <label class="label" for="password">
+                                <span class="label-char" style="--index: 0">S</span>
+                                <span class="label-char" style="--index: 1">e</span>
+                                <span class="label-char" style="--index: 2">n</span>
+                                <span class="label-char" style="--index: 3">h</span>
+                                <span class="label-char" style="--index: 4">a</span>
+                            </label>
+                        </div>
 
-                <div id="form-footer">
-                    <p>Não consegue acessar a conta? <span><a href="front.html">Mude sua Senha.</a></span></p>
+                        <div class="wave-group">
+                            <input
+                                type="text"
+                                class="input"
+                                id="filial"
+                                name="filial"
+                                placeholder=" "
+                                pattern="[0-9]{4}"
+                                title="4 números, ex: 0182"
+                            >
+                            <span class="bar"></span>
+                            <label class="label" for="filial">
+                                <span class="label-char" style="--index: 0">C</span>
+                                <span class="label-char" style="--index: 1">ó</span>
+                                <span class="label-char" style="--index: 2">d</span>
+                                <span class="label-char" style="--index: 3">.</span>
+                                <span class="label-char" style="--index: 4"> </span>
+                                <span class="label-char" style="--index: 5">f</span>
+                                <span class="label-char" style="--index: 6">i</span>
+                                <span class="label-char" style="--index: 7">l</span>
+                                <span class="label-char" style="--index: 8">i</span>
+                                <span class="label-char" style="--index: 9">a</span>
+                                <span class="label-char" style="--index: 10">l</span>
+                            </label>
+                        </div>
+
+                        <div class="select-group">
+                            <label for="perfil">Você entra como</label>
+                            <select id="perfil" name="perfil">
+                                <option value="atendente">Atendente</option>
+                                <option value="farmaceutico">Farmacêutico</option>
+                                <option value="administrador">Administrador</option>
+                            </select>
+                        </div>
+
+                        <div class="form-login-button">
+                            <button type="submit" id="form-login-button">Entrar</button>
+                        </div>
+
+                        <div id="form-footer">
+                            <p>Não consegue acessar a conta? <a href="front.html">Fale com o administrador.</a></p>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </section>
     </main>
 
