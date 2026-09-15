@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 220" preserveAspectRatio="none">
     <defs>
         <linearGradient id="footer-wave-gradient" x1="0" y1="0" x2="1600" y2="220" gradientUnits="userSpaceOnUse">
-            <stop offset="0" stop-color="#FF8FC7"/>
-            <stop offset="1" stop-color="#FF0072"/>
+            <stop offset="0" stop-color="#2F6F5E"/>
+            <stop offset="1" stop-color="#1F4E42"/>
         </linearGradient>
     </defs>
     <path

@@ -33,9 +33,6 @@ body > main,
 body > footer {
     opacity: 0;
     animation: page-reveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) 4.4s forwards;
-}
-
-body > footer {
     position: relative;
     width: 100%;
     margin: 0;
@@ -45,7 +42,7 @@ body > footer {
 body > footer img {
     display: block;
     width: 100%;
-    height: clamp(60px, 8vw, 110px);
+    height: clamp(90px, 10vw, 150px);
 }
 
 
@@ -358,15 +355,17 @@ body > main {
 }
 
 #footer-text {
-  font-size: 23px;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-size: 1.05rem;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  color: var(--ink);
-  margin: 0;
-  position: absolute;
-  bottom: 20px;
-  left: 90px;
-  right: 10px;
+  letter-spacing: 0.01em;
+  color: var(--bg);
 }
 
 .wave-group .input {
