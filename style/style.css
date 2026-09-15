@@ -200,6 +200,27 @@ body > main {
     }
 }
 
+.absolute {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.loader {
+    display: flex;
+    align-items: center;
+    margin: 0.25em 0;
+}
+
+.w-2 {
+    width: 0.5em;
+}
+
 .intro-overlay {
     position: fixed;
     inset: 0;
