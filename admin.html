@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elo - Página do Administrador</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/admin.css">
+</head>
+<body>
+    
+    <main>
+        <h1 id="header">Página do administrador</h1>
+
+        <div class="controls">
+            <button id="carregar">Carregar Usuários</button>
+            <input type="search" id="busca-usuario" name="busca-usuario" placeholder="Buscar por nome ou e-mail">
+            <select id="filtro-filial" name="filtro-filial">
+                <option value="">Todas as filiais</option>
+                <option value="Filial Centro">Filial Centro</option>
+                <option value="Filial Zona Norte">Filial Zona Norte</option>
+                <option value="Filial Zona Sul">Filial Zona Sul</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Filial</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody class="usuarios">
+                <tr>
+                    <td>
+                        Nenhum usuario carregado
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </main>
+
+    <script src="script/admin.js"></script>
+</body>
+</html>
