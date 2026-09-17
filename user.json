@@ -1,0 +1,5 @@
+{
+    "Root" : {"nome": "Filipe", "email": "filipe.admin@admin.net", "filial": "Centro"},
+    "Admin1" : {"nome": "Lucas", "email": "lucas.admin@admin.net", "filial": "Zona Norte"},
+    "Admin2": {"nome": "João", "email": "joao.admin@admin.net", "filial": "Zona Sul"}
+}
