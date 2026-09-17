@@ -1,6 +1,7 @@
 const b = document.getElementById("carregar");
 const usuarios_lista = document.querySelector(".usuarios");
 const seletor = document.getElementById("filtro-filial");
+const input = document.getElementById("busca-usuario");
 
 var users = []
 
@@ -17,16 +18,48 @@ const objeto_pra_lista = (objeto) => {
 };
 
 seletor.addEventListener("change", (evento) => {
-    let filtro = evento.target.value;
+    var base = evento.target.value;
+    const filtro = base.replace("Filial ", "");
 
-    console.log(filtro);
+    const filtrado = users.filter((user) => {
+        if (filtro == "") {
+            return true;
+        }
+
+        if (user.filial === filtro) {
+            return true;
+        };
+        //return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
+    }).map((user) => {
+        return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
+    }).join("");
+
+    //console.log(filtrado);
+    usuarios_lista.innerHTML = filtrado;
 });
+
+input.addEventListener("input", (evento) => {
+    var texto = evento.target.value;
+
+    const filtrado = users.filter((user) => {
+        if (user.nome.toUpperCase().includes(texto.toUpperCase()) || user.email.toUpperCase().includes(texto.toUpperCase())) {
+            return true
+        };
+    }).map((user) => {
+        return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
+    }).join("");
+
+    usuarios_lista.innerHTML = filtrado;
+})
 
 b.addEventListener("click", async () => {
 
     try {
         const resposta = await fetch("../user.json");
         const usuarios = await resposta.json();
+        
+        usuarios_lista.innerHTML = "";
+        users = []
         
         objeto_pra_lista(usuarios);
 
