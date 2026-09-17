@@ -29,9 +29,10 @@ seletor.addEventListener("change", (evento) => {
         if (user.filial === filtro) {
             return true;
         };
+        return false;
         //return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
     }).map((user) => {
-        return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
+        return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n` || "Nenhum usuário encontrado.";
     }).join("");
 
     //console.log(filtrado);
@@ -43,10 +44,12 @@ input.addEventListener("input", (evento) => {
 
     const filtrado = users.filter((user) => {
         if (user.nome.toUpperCase().includes(texto.toUpperCase()) || user.email.toUpperCase().includes(texto.toUpperCase())) {
-            return true
+            return true;
+        } else {
+            return false;
         };
     }).map((user) => {
-        return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
+        return `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n` || "Nenhum usuário encontrado.";
     }).join("");
 
     usuarios_lista.innerHTML = filtrado;

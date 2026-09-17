@@ -98,30 +98,14 @@
                             </label>
                         </div>
 
-                        <div class="wave-group">
-                            <input
-                                type="text"
-                                class="input"
-                                id="filial"
-                                name="filial"
-                                placeholder=" "
-                                pattern="[0-9]{4}"
-                                title="4 números, ex: 0182"
-                            >
-                            <span class="bar"></span>
-                            <label class="label" for="filial">
-                                <span class="label-char" style="--index: 0">C</span>
-                                <span class="label-char" style="--index: 1">o</span>
-                                <span class="label-char" style="--index: 2">d</span>
-                                <span class="label-char" style="--index: 3">.</span>
-                                <span class="label-char" style="--index: 4"> </span>
-                                <span class="label-char" style="--index: 5">f</span>
-                                <span class="label-char" style="--index: 6">i</span>
-                                <span class="label-char" style="--index: 7">l</span>
-                                <span class="label-char" style="--index: 8">i</span>
-                                <span class="label-char" style="--index: 9">a</span>
-                                <span class="label-char" style="--index: 10">l</span>
-                            </label>
+                        <div class="select-group">
+                            <label for="filial">Filial</label>
+                            <select id="filial" name="filial" required>
+                                <option value="" disabled selected>Selecione a filial</option>
+                                <option value="Centro">Centro</option>
+                                <option value="Zona Norte">Zona Norte</option>
+                                <option value="Zona Sul">Zona Sul</option>
+                            </select>
                         </div>
 
                         <div class="select-group">
