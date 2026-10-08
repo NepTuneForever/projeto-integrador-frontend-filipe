@@ -11,26 +11,40 @@ window.addEventListener("load", () => {
     }, 4400);
 });
 
-const login_form = document.getElementById("login-form")
+const login_form = document.getElementById("login-form");
+var users = [];
+
+const validar_users = async () => {
+    users = [];
+    const resposta = await fetch("../user.json");
+    const usuarios = await resposta.json();
+
+    Object.values(usuarios).forEach((user) => {
+        users.push({email: user.email, filial: user.filial});
+    });
+};
 
 if (login_form) {
-    login_form.addEventListener("submit", function(event) {
-        event.preventDefault()
+    login_form.addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-        const dados = new FormData(event.target);
+    const form = new FormData(login_form);
+    const email = form.get('email');
+    const filial = form.get('filial');
 
-        const nome = dados.get('nome');
-        const email = dados.get('email');
-        const senha = dados.get('password');
-        const filial = dados.get('filial');
-        const perfil = dados.get('perfil');
+    await validar_users();
 
-        console.log('--- Dados do Login ---');
-        console.log('E-mail:', email);
-        console.log('Senha:', senha);
-        console.log('Filial:', filial);
-        console.log('Perfil:', perfil);
+    const appvrd = users.find(obj => obj.email == email && obj.filial == filial);
+    const r = appvrd ? 'aprovado' : 'reprovado';
 
-        document.location.href = "front.html"
-    })
-}
+    console.log(r);
+
+    if (r === 'aprovado') {
+        document.location.href = "front.html";
+    } else {
+        console.log("email ou filial incorretos");
+    }
+});
+
+
+};

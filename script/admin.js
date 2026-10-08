@@ -3,7 +3,7 @@ const usuarios_lista = document.querySelector(".usuarios");
 const seletor = document.getElementById("filtro-filial");
 const input = document.getElementById("busca-usuario");
 
-var users = []
+var users = [];
 
 const listar_usuarios = (acumulador, user) => {
     return acumulador + `<tr><td>${user.nome}</td><td>${user.email}</td><td>${user.filial}</td><td>N/A</td></tr>\n`;
