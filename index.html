@@ -6,7 +6,7 @@
     <title>Elo - Gestão de Atendimento para Farmácias</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/main.css">
 </head>
@@ -27,17 +27,17 @@
                     <svg height="0" width="0" viewBox="0 0 64 64" class="absolute">
                         <defs>
                             <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="b">
-                                <stop stop-color="#973BED"></stop>
-                                <stop stop-color="#007CFF" offset="1"></stop>
+                                <stop stop-color="#1F4E42"></stop>
+                                <stop stop-color="#2F6F5E" offset="1"></stop>
                             </linearGradient>
                             <linearGradient gradientUnits="userSpaceOnUse" y2="0" x2="0" y1="64" x1="0" id="c">
-                                <stop stop-color="#FFC800"></stop>
-                                <stop stop-color="#F0F" offset="1"></stop>
+                                <stop stop-color="#B9873A"></stop>
+                                <stop stop-color="#1F4E42" offset="1"></stop>
                                 <animateTransform repeatCount="indefinite" keySplines=".42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1;.42,0,.58,1" keyTimes="0; 0.125; 0.25; 0.375; 0.5; 0.625; 0.75; 0.875; 1" dur="8s" values="0 32 32;-270 32 32;-270 32 32;-540 32 32;-540 32 32;-810 32 32;-810 32 32;-1080 32 32;-1080 32 32" type="rotate" attributeName="gradientTransform"></animateTransform>
                             </linearGradient>
                             <linearGradient gradientUnits="userSpaceOnUse" y2="2" x2="0" y1="62" x1="0" id="d">
-                                <stop stop-color="#00E0ED"></stop>
-                                <stop stop-color="#00DA72" offset="1"></stop>
+                                <stop stop-color="#2F6F5E"></stop>
+                                <stop stop-color="#B9873A" offset="1"></stop>
                             </linearGradient>
                         </defs>
                     </svg>
@@ -65,50 +65,74 @@
 
     <main>
         <section id="cadastro">
-            <h2>Login</h2>
-            <form action="" method="POST">
-                <div id="form-email">
-                    <div class="wave-group">
-                        <input required type="email" class="input" id="email" name="email" placeholder=" ">
-                        <span class="bar"></span>
-                        <label class="label" for="email">
-                            <span class="label-char" style="--index: 0">E</span>
-                            <span class="label-char" style="--index: 1">m</span>
-                            <span class="label-char" style="--index: 2">a</span>
-                            <span class="label-char" style="--index: 3">i</span>
-                            <span class="label-char" style="--index: 4">l</span>
-                        </label>
-                    </div>
+            <div class="login-card">
+                <div class="login-brand">
+                    <p class="login-brand-mark">ELO</p>
+                    <p class="login-brand-text">Um só lugar para acompanhar cada cliente da farmácia, do primeiro atendimento à próxima compra recorrente.</p>
                 </div>
 
-                <div id="form-password">
-                    <div class="wave-group">
-                        <input required type="password" class="input" id="password" name="password" placeholder=" ">
-                        <span class="bar"></span>
-                        <label class="label" for="password">
-                            <span class="label-char" style="--index: 0">S</span>
-                            <span class="label-char" style="--index: 1">e</span>
-                            <span class="label-char" style="--index: 2">n</span>
-                            <span class="label-char" style="--index: 3">h</span>
-                            <span class="label-char" style="--index: 4">a</span>
-                        </label>
-                    </div>
-                </div>
+                <div class="login-form-panel">
+                    <h2>Entrar</h2>
+                    <form action="" method="POST" id="login-form" name="formlogin">
+                        <div class="wave-group">
+                            <input required type="email" class="input" id="email" name="email" placeholder=" ">
+                            <span class="bar"></span>
+                            <label class="label" for="email">
+                                <span class="label-char" style="--index: 0">E</span>
+                                <span class="label-char" style="--index: 1">m</span>
+                                <span class="label-char" style="--index: 2">a</span>
+                                <span class="label-char" style="--index: 3">i</span>
+                                <span class="label-char" style="--index: 4">l</span>
+                            </label>
+                        </div>
 
-                <div class="form-login-button">
-                    <button type="submit" id="form-login-button">Login</button>
-                </div>
+                        <div class="wave-group">
+                            <input required type="password" class="input" id="password" name="password" placeholder=" ">
+                            <span class="bar"></span>
+                            <label class="label" for="password">
+                                <span class="label-char" style="--index: 0">S</span>
+                                <span class="label-char" style="--index: 1">e</span>
+                                <span class="label-char" style="--index: 2">n</span>
+                                <span class="label-char" style="--index: 3">h</span>
+                                <span class="label-char" style="--index: 4">a</span>
+                            </label>
+                        </div>
 
-                <div id="form-footer">
-                    <p>Não consegue acessar a conta? <span><a href="front.html">Mude sua Senha.</a></span></p>
+                        <div class="select-group">
+                            <label for="filial">Filial</label>
+                            <select id="filial" name="filial" required>
+                                <option value="" disabled selected>Selecione a filial</option>
+                                <option value="Centro">Centro</option>
+                                <option value="Zona Norte">Zona Norte</option>
+                                <option value="Zona Sul">Zona Sul</option>
+                            </select>
+                        </div>
+
+                        <div class="select-group">
+                            <label for="perfil">Você entra como</label>
+                            <select id="perfil" name="perfil">
+                                <option value="atendente">Atendente</option>
+                                <option value="farmaceutico">Farmacêutico</option>
+                                <option value="administrador">Administrador</option>
+                            </select>
+                        </div>
+
+                        <div class="form-login-button">
+                            <button type="submit" id="form-login-button">Entrar</button>
+                        </div>
+
+                        <div id="form-footer">
+                            <p>Não consegue acessar a conta? <a href="front.html">Fale com o administrador.</a></p>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </section>
     </main>
 
     <footer>
         <img src="assets/images/footer.svg" alt="imagem do footer do projeto">
-        <p id="footer-text">Projeto Integrador &mdash; ELO</p>
+        <p id="footer-text">Projeto Integrador - ELO</p>
     </footer>
 
     <script src="script/script.js"></script>
